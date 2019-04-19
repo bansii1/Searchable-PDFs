@@ -2,7 +2,6 @@ from pdf2image import convert_from_path, convert_from_bytes
 from pdf2image.exceptions import ( PDFInfoNotInstalledError, PDFPageCountError, PDFSyntaxError)
 import glob, os
 from PIL import Image
-import cv2
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
 PATH="/home/bansi/Accobots/Using tesseract onl/"
