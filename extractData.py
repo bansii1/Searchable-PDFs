@@ -1,27 +1,20 @@
 from PIL import Image
 import argparse
-import cv2
 import os
 import pytesseract
 import matplotlib.pyplot as plt
-import numpy as np
 from PIL import ImageEnhance, ImageFilter
 from convertPDFtojpg import convert_pdf_to_images, merge_pdfs
 import sys
 from wand.image import Image as WImage
 
-target_width=540
-target_height=960
-kernel=np.ones((3,3),np.uint8)
 PATH="/home/bansi/Accobots/Using tesseract onl/"
 OPT_PATH="images/"
-
-
 
 def get_from_pdf(pdf_name):
 	
 	convert_pdf_to_images(pdf_name)
-
+	
 	filelist= [file for file in os.listdir(OPT_PATH) if file.endswith('.jpg')]
 	print(filelist)
 	
@@ -55,19 +48,17 @@ def get_from_image(image_name):
 	
 	print("writing to "+OPT_PATH+'optfile'+image_name.split(".")[0]+".pdf")
 
-	
+if __name__=="__main__":	
+	ap=argparse.ArgumentParser()
+	ap.add_argument("-f","--filename", help="Path to input file-pdf/image ")
+	args=vars(ap.parse_args())
+	filename=args["filename"]
 
-	
-ap=argparse.ArgumentParser()
-ap.add_argument("-f","--filename", help="Path to input file-pdf/image ")
-args=vars(ap.parse_args())
-filename=args["filename"]
-
-if filename.split(".")[-1]=="pdf":
-	get_from_pdf(filename)
-elif filename.split(".")[-1]=="jpg" or filename.split(".")[-1]=="jpeg" or filename.split(".")[-1]=="png":
-	get_from_image(filename)
-else:
-	print()
-print("Done")
+	if filename.split(".")[-1]=="pdf":
+		get_from_pdf(filename)
+	elif filename.split(".")[-1]=="jpg" or filename.split(".")[-1]=="jpeg" or filename.split(".")[-1]=="png":
+		get_from_image(filename)
+	else:
+		print()
+	print("Done")
 																																																																																																																																																												
