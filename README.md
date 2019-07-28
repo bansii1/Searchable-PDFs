@@ -12,7 +12,7 @@ Apart from pytesseract, other important libraries used are,
 * wand
 * pyPDF2
 
-# Imrpovements
+# Improvements
 * Merging pdfs can be included
 * Support for poor quality images and auto cropping pages similar to Camscanner can be implemented
 * Entire project can be put on server 
