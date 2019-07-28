@@ -16,3 +16,8 @@ Apart from pytesseract, other important libraries used are,
 * Merging pdfs can be included
 * Support for poor quality images and auto cropping pages similar to Camscanner can be implemented
 * Entire project can be put on server 
+
+# Scanned Image File example
+<img src="https://github.com/bansii1/Searchable-PDFs/blob/master/ss.jpg" width="600" height="800">
+
+Corresponding searchable PDF is also uploaded in the repository.
